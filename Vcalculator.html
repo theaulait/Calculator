@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="calculator.css">
+	<title>Simple Calculator</title>
+</head>
+<body>
+<header>Simple Calculator</header>
+<form name="Calc">
+	<table>
+	<tr>
+		<th colspan="4"><input type="text" id="userInput" name="input"></th>
+	</tr> 
+	<tr>
+		<td colspan="2" ><input type="button" name="average" class="top" id="average" value="X" onclick="getAverage()"></td>
+		<td colspan="2" ><input type="button" name="clear" class="top" value="C" onclick="Calc.input.value = ' '"></td>
+	</tr>
+	<tr>
+		<td><input type="button" name="seven" class="bttn" value="7" onclick="Calc.input.value += '7'"></td>
+		<td><input type="button" name="eight" class="bttn" value="8" onclick="Calc.input.value += '8'"></td>
+		<td><input type="button" name="nine" class="bttn" value="9" onclick="Calc.input.value += '9'"></td>
+		<td><input type="button" name="plus" class="bttn" value="+" onclick="Calc.input.value += '+'"></td>
+	</tr>
+	<tr>
+		<td><input type="button" name="four" class="bttn" value="4" onclick="Calc.input.value += '4'"></td>
+		<td><input type="button" name="five" class="bttn" value="5" onclick="Calc.input.value += '5'"></td>
+		<td><input type="button" name="six" class="bttn" value="6" onclick="Calc.input.value += '6'"></td>
+		<td><input type="button" name="plus" class="bttn" value="-" onclick="Calc.input.value += '-'"></td>
+	</tr>
+	<tr>
+		<td><input type="button" name="one" class="bttn" value="1" onclick="Calc.input.value += '1'"></td>
+		<td><input type="button" name="two" class="bttn" value="2" onclick="Calc.input.value += '2'"></td>
+		<td><input type="button" name="three" class="bttn" value="3" onclick="Calc.input.value += '3'"></td>
+		<td><input type="button" name="multiple" class="bttn" value="*" onclick="Calc.input.value += '*'"></td>
+	</tr>
+	<tr>
+		<td><input type="button" name="zero" class="bttn" value="0" onclick="Calc.input.value += '0'"></td>
+		<td><input type="button" name="decimal" class="bttn" value="." onclick="Calc.input.value += '.'"></td>
+		<td><input type="button" name="equal" class="bttn" value="=" onclick="Calc.input.value = eval(Calc.input.value)"></td>
+		<td><input type="button" name="divide" class="bttn" value="/" onclick="Calc.input.value += '/'"></td>
+	</tr>
+	</table>
+</form>
+
+<footer>No Brain Washing</footer>
+
+<script type="text/javascript">
+
+function getAverage(){
+var nums = document.getElementById('userInput').value;
+var numArray = nums.split('+');
+var total = 0;
+for (var i=0; i< numArray.length; i++) {
+    total += Number(numArray[i]);
+}
+var avg = total/numArray.length;
+document.getElementById('userInput').value = avg;
+}
+</script>
+
+
+</body>
+</html>
